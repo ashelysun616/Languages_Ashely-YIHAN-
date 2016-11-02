@@ -55,12 +55,14 @@ totalMotion+=diff;
 }
 float avgMotion = totalMotion / video.pixels.length/2;
 // Draw a circle based on average motion
-fill(0,0,0,40);
+
 noStroke();
 float r = avgMotion * 5;
 image(mov, 160, 0,160,240);  
 float newSpeed = map(r*2, 0, width/2, 0.5, 2);
 mov.speed(newSpeed); 
-text(nfc(newSpeed, 2) + "X", 10, 30); 
+fill(0);
+text(nfc(newSpeed, 2) + "X", 10, 30);
+fill(0,0,0,40);
 ellipse(240, height/2, r, r);
 }
